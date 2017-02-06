@@ -1,0 +1,212 @@
+
+package: array-0.5.1.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0
+install-outcome: ConfigureFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: binary-0.8.4.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: containers-0.5.9.1 bytestring-0.10.8.1 base-4.8.2.0
+              array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: bytestring-0.10.8.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+flags: -integer-simple
+dependencies: integer-gmp-1.0.0.0 ghc-prim-0.4.0.0 deepseq-1.4.2.0
+              base-4.8.2.0
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: containers-0.5.9.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: ghc-prim-0.4.0.0 deepseq-1.4.2.0 base-4.8.2.0
+              array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: deepseq-1.4.2.0
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0 array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: guitar-0.1.0.0
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: binary-0.8.4.1 base-4.8.2.0
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: array-0.5.1.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0
+install-outcome: ConfigureFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: binary-0.8.4.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: containers-0.5.9.1 bytestring-0.10.8.1 base-4.8.2.0
+              array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: bytestring-0.10.8.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+flags: -integer-simple
+dependencies: integer-gmp-1.0.0.0 ghc-prim-0.4.0.0 deepseq-1.4.2.0
+              base-4.8.2.0
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: containers-0.5.9.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: ghc-prim-0.4.0.0 deepseq-1.4.2.0 base-4.8.2.0
+              array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: deepseq-1.4.2.0
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0 array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: array-0.5.1.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0
+install-outcome: ConfigureFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: binary-0.8.4.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: containers-0.5.9.1 bytestring-0.10.8.1 base-4.8.2.0
+              array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: bytestring-0.10.8.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+flags: -integer-simple
+dependencies: integer-gmp-1.0.0.0 ghc-prim-0.4.0.0 deepseq-1.4.2.0
+              base-4.8.2.0
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: containers-0.5.9.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: ghc-prim-0.4.0.0 deepseq-1.4.2.0 base-4.8.2.0
+              array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: deepseq-1.4.2.0
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0 array-0.5.1.1
+install-outcome: DependencyFailed array-0.5.1.1
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: array-0.5.1.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0
+install-outcome: ConfigureFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: array-0.5.1.1
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: base-4.8.2.0
+install-outcome: ConfigureFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: guitar-0.1.0.0
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: binary-0.7.5.0 base-4.8.2.0
+install-outcome: BuildFailed
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: guitar-0.1.0.0
+os: linux
+arch: x86_64
+compiler: ghc-7.10.3
+client: cabal-install-1.22.9.0
+dependencies: bytestring-0.10.6.0 binary-0.7.5.0 base-4.8.2.0
+install-outcome: InstallOk
+docs-outcome: NotTried
+tests-outcome: NotTried
