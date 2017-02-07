@@ -2,31 +2,36 @@ import qualified Data.ByteString.Lazy as BL
 import Data.Binary.Get
 import Data.Word
 import Data.Int
- 
-deserialiseHeader :: Get (BL.ByteString,Word8, Word8)
-deserialiseHeader = do
-  version <- readBytes 30
-  len2 <- getWord8
-  what <- getWord8
-  return (version,what, len2)
+import Debug.Trace
 
-readBytes max = do
+traceThis :: (Show a) => a -> a
+traceThis x = trace (show x) x
+
+
+
+ 
+deserialiseHeader :: Get (BL.ByteString,BL.ByteString, BL.ByteString)
+deserialiseHeader = do
+  version <- readStringByte 30
+  name <- readStringByteSizeOfInteger
+  return (version, name, name)
+
+readStringByte max = do
     len <- getWord8
-    str <- readBytesLen max $ fromIntegral len
+    str <- readString max $ fromIntegral len
     return str
 
-readBytesLen :: Int -> Int -> Get (BL.ByteString)
-readBytesLen max len = do
+readString :: Int -> Int -> Get (BL.ByteString)
+readString max len = do
     str <- getLazyByteString $ fromIntegral len
     ignore <- skip $ max - len
     return str
 
-read2 :: Int64 -> Int64 -> Get BL.ByteString
-read2 max len = getLazyByteString len 
+readStringByteSizeOfInteger :: Get (BL.ByteString)
+readStringByteSizeOfInteger = do
+    size <- getWord32le
+    readStringByte $ (fromIntegral size)- 1 
 
-
-word8ToInt64 :: Word8 -> Int64
-word8ToInt64  = fromIntegral 
 
  
 main :: IO ()
