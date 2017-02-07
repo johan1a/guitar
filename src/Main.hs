@@ -1,16 +1,24 @@
 import qualified Data.ByteString.Lazy as BL
 import Data.Binary.Get
 import Data.Word
+import Data.Int
  
-deserialiseHeader :: Get (Word32, Word32, Word32)
+deserialiseHeader :: Get (BL.ByteString,BL.ByteString, Word32)
 deserialiseHeader = do
-  alen <- getWord32be
-  plen <- getWord32be
+  len <- getWord8
+  version <- getLazyByteString $ word8ToInt64 len 
+  plen <- getLazyByteStringNul
   chksum <- getWord32be
-  return (alen, plen, chksum)
+  return (version,plen, chksum)
+
+
+word8ToInt64 :: Word8 -> Int64
+word8ToInt64  w = fromIntegral w
+
  
 main :: IO ()
 main = do
-  input <- BL.getContents
+  input <- BL.readFile "hey_joe.gp5"
   print $ runGet deserialiseHeader input
+
 
