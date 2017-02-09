@@ -19,8 +19,38 @@ data SongInfo = SongInfo
     , comments :: BL.ByteString
     } deriving (Show)
 
+data Lyrics = Lyrics 
+    {lyricTrack :: Int
+    , lyricFrom :: Int
+    , lyrics ::  BL.ByteString
+    }
+    deriving (Show)
+
+readGP5 = do
+    songInfo <- readSongInfo
+    lyrics <- readLyrics
+    return (songInfo, lyrics)
+
+readLyrics = do
+   lyricTrack <- readInt 
+   lyricFrom <- readInt
+   lyrics <- readStringInteger
+   a <- readInt
+   b <- readStringInteger
+   a <- readInt
+   b <- readStringInteger
+   a <- readInt
+   b <- readStringInteger
+   a <- readInt
+   b <- readStringInteger
+   return $ Lyrics (fromIntegral lyricTrack) (fromIntegral lyricFrom) lyrics
+
+readStringInteger :: Get BL.ByteString
+readStringInteger = do
+    size <- readInt
+    readString (fromIntegral size) (fromIntegral size)
  
---readSongInfo :: Get (BL.ByteString,BL.ByteString, BL.ByteString)
+readSongInfo :: Get SongInfo
 readSongInfo = do
   fileVersion <- readStringByte 30
   name <- readStringByteSizeOfInteger
@@ -35,16 +65,16 @@ readSongInfo = do
   comments <- readComments
   return (SongInfo name version artist album author copyright tabAuthor comments)
 
-readComments :: Get (BL.ByteString)
+readComments :: Get BL.ByteString
 readComments = do
-    nbrComments <- getWord32le
+    nbrComments <- readInt
     readComments1 $ fromIntegral nbrComments
 
-readComments1 :: Int -> Get ( BL.ByteString )
+readComments1 :: Int -> Get BL.ByteString
 readComments1 0 = return BL.empty
 readComments1 k = do
     comment <- readStringByteSizeOfInteger
-    tail    <- readComments1 (k - 1)
+    tail    <- readComments1 $ k - 1
     return $ (BL.append comment tail)
 
 readStringByte max = do
@@ -60,14 +90,16 @@ readString max len = do
 
 readStringByteSizeOfInteger :: Get (BL.ByteString)
 readStringByteSizeOfInteger = do
-    size <- getWord32le
+    size <- readInt
     readStringByte $ (fromIntegral size)- 1 
 
+
+readInt = getWord32le
 
  
 main :: IO ()
 main = do
   input <- BL.readFile "hey_joe.gp5"
-  print $ runGet readSongInfo input
+  print $ runGet readGP5 input
 
 
